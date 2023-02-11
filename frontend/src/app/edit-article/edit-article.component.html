@@ -1,0 +1,84 @@
+<div class="mb-3">
+  <label for="articlelogin" class="form-label">Login</label>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="article.login"
+    #articleLogin
+  />
+</div>
+
+<div class="mb-3">
+  <label for="articlenome" class="form-label">Nome</label>
+  <textarea
+    class="form-control"
+    [(ngModel)]="article.nome"
+    #articleNome
+    rows="3"
+  ></textarea>
+</div>
+
+<div class="mb-3">
+  <label for="articlecpf" class="form-label">CPF</label>
+  <textarea
+    class="form-control"
+    [(ngModel)]="article.cpf"
+    #articleCPF
+    rows="3"
+  ></textarea>
+</div>
+
+<div class="mb-3">
+  <label for="articleemail" class="form-label">E-mail</label>
+  <input
+    type="email"
+    class="form-control"
+    [(ngModel)]="article.email"
+    #articleemail
+  />
+</div>
+
+<div class="mb-3">
+  <label for="articleendereco" class="form-label">Endereço</label>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="article.endereco"
+    #articleendereco
+  />
+</div>
+
+<div class="mb-3">
+  <label for="articlesenha" class="form-label">Senha</label>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="article.senha"
+    #articlesenha
+  />
+</div>
+
+<div>
+  <button
+    type="button"
+    class="btn btn-success"
+    (click)="
+      update(
+        articleLogin.value,
+        articleNome.value,
+        articleCPF.value,
+        articleemail.value,
+        articleendereco.value,
+        articlesenha.value
+      );
+      articleLogin.value = '';
+      articleNome.value = '';
+      articleCPF.value = '';
+      articleemail.value = '';
+      articleendereco.value = '';
+      articlesenha.value = ''
+    "
+  >
+    Atualizar
+  </button>
+</div>

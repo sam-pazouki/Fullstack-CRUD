@@ -10,6 +10,7 @@ export class ArticlesComponent implements OnInit {
   constructor(private articleService: ArticleService) {}
 
   articles: any;
+
   ngOnInit(): void {
     this.showArticles();
   }
@@ -18,6 +19,12 @@ export class ArticlesComponent implements OnInit {
     this.articles = this.articleService.listArticles().subscribe((article) => {
       this.articles = article;
       console.log(this.articles);
+    });
+  }
+
+  deleteArticle(id: any) {
+    this.articleService.deleteArticle(id).subscribe((res) => {
+      this.articles = this.articles.filters((a: any) => a.id == id);
     });
   }
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory ; 
-    private $fillable = [
+    protected $fillable = [
         'login', 'nome', 'cpf', 'e-mail',' endereço', ' senha'
     ];
 

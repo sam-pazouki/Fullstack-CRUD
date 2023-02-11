@@ -16,8 +16,12 @@ class ArticleResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
+            'login' => $this->login,
+            'nome' => $this->nome,
+            ' cpf' => $this-> cpf,
+            'e-mail,' => $this->email,
+            'endereço' => $this->endereço,
+            'senha' => $this->senha,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

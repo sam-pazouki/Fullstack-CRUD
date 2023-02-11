@@ -1,1 +1,34 @@
-<p>articles works!</p>
+<h1>FullStack Test</h1>
+<div>
+  <button class="btn btn-primary">Adicionar</button>
+</div>
+<div>
+  <table class="table table-striped">
+    <thead>
+      <th>Login</th>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>E-mail</th>
+      <th>Endereço</th>
+      <th>Senha</th>
+    </thead>
+    <tbody *ngIf="articles.length">
+      <tr *ngFor="let article of articles">
+        <td>{{ article.login }}</td>
+        <td>{{ article.nome }}</td>
+        <td>{{ article.cpf }}</td>
+        <td>{{ article.email }}</td>
+        <td>{{ article.endereco }}</td>
+        <td>{{ article.senha }}</td>
+        <td>
+          <button class="btn btn-info">Edit</button>&nbsp;<button
+            class="btn btn-danger"
+          ></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <button class="btn btn-primary" router-link="/add">Adicionar</button>
+</div>

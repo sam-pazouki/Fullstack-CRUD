@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Illuminate\Http\Middleware\TrustProxies as Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class TrustProxies extends Middleware
 {
@@ -12,7 +13,9 @@ class TrustProxies extends Middleware
      *
      * @var array<int, string>|string|null
      */
-    protected $proxies;
+    protected $proxies=[
+        'http://localhost:4200'
+    ];
 
     /**
      * The headers that should be used to detect proxies.

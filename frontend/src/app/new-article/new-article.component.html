@@ -1,0 +1,54 @@
+<div class="mb-3">
+  <label for="articlelogin" class="form-label">Login</label>
+  <input type="text" class="form-control" #articleLogin />
+</div>
+
+<div class="mb-3">
+  <label for="articlenome" class="form-label">Nome</label>
+  <textarea class="form-control" #articleNome rows="3"></textarea>
+</div>
+
+<div class="mb-3">
+  <label for="articlecpf" class="form-label">CPF</label>
+  <textarea class="form-control" #articleCPF rows="3"></textarea>
+</div>
+
+<div class="mb-3">
+  <label for="articleemail" class="form-label">E-mail</label>
+  <input type="email" class="form-control" #articleemail />
+</div>
+
+<div class="mb-3">
+  <label for="articleendereço" class="form-label">Endereço</label>
+  <input type="text" class="form-control" #articleendereco />
+</div>
+
+<div class="mb-3">
+  <label for="articlesenha" class="form-label">Senha</label>
+  <input type="text" class="form-control" #articlesenha />
+</div>
+
+<div>
+  <button
+    type="button"
+    class="btn btn-success"
+    (click)="
+      add(
+        articleLogin.value,
+        articleNome.value,
+        articleCPF.value,
+        articleemail.value,
+        articleendereco.value,
+        articlesenha.value
+      );
+      articleLogin.value = '';
+      articleNome.value = '';
+      articleCPF.value = '';
+      articleemail.value = '';
+      articleendereco.value = '';
+      articlesenha.value = ''
+    "
+  >
+    Adicionar
+  </button>
+</div>
