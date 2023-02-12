@@ -28,6 +28,25 @@
       </tr>
     </tbody>
   </table>
+  <table class="table table-striped">
+    <thead>
+      <th>Nome</th>
+      <th>CNPJ</th>
+      <th>Endereço</th>
+    </thead>
+    <tbody *ngIf="articles.length">
+      <tr *ngFor="let article of articles">
+        <td>{{ article.nome }}</td>
+        <td>{{ article.cnpj }}</td>
+        <td>{{ article.endereco }}</td>
+        <td>
+          <button class="btn btn-info">Edit</button>&nbsp;<button
+            class="btn btn-danger"
+          ></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div>
   <button class="btn btn-primary" router-link="/add">Adicionar</button>

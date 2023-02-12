@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
-class ArticleConroller extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -50,9 +50,12 @@ class ArticleConroller extends Controller
     {
         if (Article::where('id', $id)->exist()) {
             $article = Article::find($id);
-            $article->title = $request->tile;
-            $article->body = $request->body;
-            $article->author = $request->author;
+            $article->login = $request->login;
+            $article->nome = $request->nome;
+            $article-> cpf = $request->cpf;
+            $article->email = $request->email;
+            $article->endereço = $request->endereço;
+            $article->senha = $request->senha;
 
             $article->save();
             return response()->jason([

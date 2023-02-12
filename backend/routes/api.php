@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
-use App\Http\Controllers\ArticleConroller;
+use App\Http\Controllers\ArticleController;
 use App\Http\Resources\ArticleResource;
 
 /*

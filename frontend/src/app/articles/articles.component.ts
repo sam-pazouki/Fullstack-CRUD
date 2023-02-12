@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../services/article.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-articles',
@@ -7,7 +8,7 @@ import { ArticleService } from '../services/article.service';
   styleUrls: ['./articles.component.scss'],
 })
 export class ArticlesComponent implements OnInit {
-  constructor(private articleService: ArticleService) {}
+  constructor(private articleService: ArticleService, private router: Router) {}
 
   articles: any;
 
@@ -24,7 +25,8 @@ export class ArticlesComponent implements OnInit {
 
   deleteArticle(id: any) {
     this.articleService.deleteArticle(id).subscribe((res) => {
-      this.articles = this.articles.filters((a: any) => a.id == id);
+      this.articles = this.articles.filter((a: any) => a.id == id);
     });
+    this.router.navigateByUrl('/');
   }
 }

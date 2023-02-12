@@ -3,13 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../services/article.service';
 
 @Component({
-  selector: 'app-edi-article',
+  selector: 'app-edit-article',
   templateUrl: './edit-article.component.html',
   styleUrls: ['./edit-article.component.scss'],
 })
-export class EdiArticleComponent implements OnInit {
+export class EditArticleComponent implements OnInit {
   articleId: any;
   article: any;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -25,6 +26,7 @@ export class EdiArticleComponent implements OnInit {
       console.log(this.article);
     });
   }
+
   update(
     articleLogin: string,
     articleNome: string,
