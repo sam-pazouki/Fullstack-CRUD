@@ -8,7 +8,7 @@ import { ArticleService } from '../services/article.service';
   styleUrls: ['./edit-article.component.scss'],
 })
 export class EditArticleComponent implements OnInit {
-  articleId: any;
+  articleLogin: any;
   article: any;
 
   constructor(
@@ -19,9 +19,9 @@ export class EditArticleComponent implements OnInit {
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    this.articleId = Number(routeParams.get('articleId'));
-    console.log(this.articleId);
-    this.articleService.find(this.articleId).subscribe((data: any) => {
+    this.articleLogin = Number(routeParams.get('articleLogin'));
+    console.log(this.articleLogin);
+    this.articleService.find(this.articleLogin).subscribe((data: any) => {
       this.article = data;
       console.log(this.article);
     });
@@ -36,7 +36,7 @@ export class EditArticleComponent implements OnInit {
     articlesenha: string
   ) {
     this.articleService
-      .update(this.articleId, this.article)
+      .update(this.articleLogin, this.article)
       .subscribe((res) => {
         this.router.navigateByUrl('/');
       });

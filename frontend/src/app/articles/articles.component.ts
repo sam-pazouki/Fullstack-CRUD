@@ -23,9 +23,9 @@ export class ArticlesComponent implements OnInit {
     });
   }
 
-  deleteArticle(id: any) {
-    this.articleService.deleteArticle(id).subscribe((res) => {
-      this.articles = this.articles.filter((a: any) => a.id == id);
+  deleteArticle(login: any) {
+    this.articleService.deleteArticle(login).subscribe((res) => {
+      this.articles = this.articles.filter((a: any) => a.id == login);
     });
     this.router.navigateByUrl('/');
   }

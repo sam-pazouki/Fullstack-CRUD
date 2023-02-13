@@ -26,19 +26,19 @@ export class ArticleService {
       this.httpOptions
     );
   }
-  find(id: number): Observable<any> {
-    return this.http.get(this.url + `/api/article/` + id);
+  find(login: number): Observable<any> {
+    return this.http.get(this.url + `/api/article/` + login);
   }
 
-  update(id: number, article: any): Observable<any> {
+  update(login: number, article: any): Observable<any> {
     return this.http.put(
-      this.url + `/api/article/` + id,
+      this.url + `/api/article/` + login,
       article.this.httpOptions
     );
   }
-  deleteArticle(id: any): Observable<any> {
+  deleteArticle(login: any): Observable<any> {
     return this.http.delete<any>(
-      this.url + `/api/article/` + id,
+      this.url + `/api/article/` + login,
       this.httpOptions
     );
   }
